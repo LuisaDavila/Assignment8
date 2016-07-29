@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lab 2 - Calculator III</title>
+    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"> </script>
+    <script type="text/javascript">
+    $('document').ready(function(){
+        $(':button').css('width', '25px')
+                   .css('height', '155px')
+                   .css('padding', '25px 15px')
+                   .css('margin-top', '5px');
+        $('#seven').css('background-color', '#ccc3de').css('border', '2px solid').css('width', '5px').css('color', 'white');
+         $('#eight').css('background-color', '#208075').css('border', '5px solid').css('width', '75px').css('color', '#d1e5e1');
+        $('#nine').css('background-color', '#c0d3c5').css('border', '2px inset').css('width', '25px').css('color', '#fff');
+        $('#four').css('background-color', '#acc355').css('border', '1px groove').css('width', '15px').css('color', '#dedede');
+         $('#divide').css('background-color', '#a22e57').css('border', '1px solid').css('width', '35px').css('color', '#fff');
+        $('#five').css('background-color', '#ccc3de').css('border', '3px solid').css('width', '75px').css('color', '#acc355');
+        $('#six').css('background-color', '#208075').css('border', '1px groove').css('width', '15px').css('color', '#fff');
+        $('#six').css('background-color', '#c0d3c5').css('border', '1px inset').css('width', '55px').css('color', '#fff');
+        $('#multiply').css('background-color', '#acc355').css('border', '2px solid').css('width', '15px').css('color', '#ccc');
+        $('#one').css('background-color', '#ccc3de').css('border', '1px dashed').css('width', '75px').css('color', '#fff');
+        $('#two').css('background-color', '#208075').css('border', '3px solid').css('width', '10px').css('color', '#fff');
+        $('#three').css('background-color', '#c0d3c5').css('border', '1px solid').css('width', '40px').css('color', '#fff');
+        $('#subtract').css('background-color', '#a22e57').css('border', '1px solid').css('width', '35px').css('color', '#fff');
+        $('#period').css('background-color', '#ccc3de').css('border', '1px groove').css('width', '15px').css('color', '#fff');
+        $('#add').css('background-color', '#208075').css('border', '1px groove').css('width', '15px').css('color', '#fff');
+        $('#equal').css('background-color', '#a22e57').css('border', '3px solid').css('width', '125px').css('color', '#fff');
+        $('#zero').css('background-color', '#c0d3c5').css('border', '1px inset').css('width', '55px').css('color', '#fff');
+        $('#result').css('background-color', '#666').css('width', '200px').css('border','3px inset');
+        $(":input").css('fontSize', '16px').css('color', '#fff');
+        $(":button").click(function () {
+        var currentButton = $(this).val();
+        if (currentButton === "=") {
+            var getField = $("#result").val();
+            var parsed = eval(getField);
+            $("#result").val(parsed);
+        } else if (currentButton === "clear") {
+            $("#result").val("");
+        } else {
+            $("#result").val($("#result").val() + currentButton);
+        }
+    }
+);
+       
+    });
+    
+    </script>
+</head>
+
+<body>
+	<input type="text" readonly id="result">
+    <br>
+    <div id="container">
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="divide" value="/">
+        <br>
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+        <br>
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subtract" value="-">
+        <br>
+        <input type="button" id="zero" value="0">
+        <input type="button" id="period" value=".">
+        <input type="button" id="add" value="+">
+    </div>
+    <input type="button" id="equal" value="=">
+</body>
+</html>
